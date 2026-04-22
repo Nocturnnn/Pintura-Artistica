@@ -1,0 +1,1150 @@
+.mural {
+  --panel-radius: 38px;
+  position: relative;
+  min-height: min(1100px, 92vh);
+  border-radius: var(--panel-radius);
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, #f8e6d4 0%, #f5dec2 18%, #f0cb9f 36%, #f4dfbe 58%, #f0d1a0 100%);
+  border: 1px solid rgba(16, 35, 61, 0.1);
+  box-shadow:
+    0 30px 60px rgba(16, 35, 61, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.52);
+  isolation: isolate;
+}
+
+.compact {
+  min-height: 620px;
+  border-radius: 32px;
+}
+
+.backgroundWash {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.42), transparent 22%),
+    radial-gradient(circle at 80% 18%, rgba(255, 255, 255, 0.24), transparent 22%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 24%);
+}
+
+.frameBorder {
+  position: absolute;
+  inset: 14px;
+  border: 2px solid rgba(255, 246, 235, 0.4);
+  border-radius: calc(var(--panel-radius) - 12px);
+  pointer-events: none;
+}
+
+.bottomPattern {
+  position: absolute;
+  inset: auto 0 0;
+  height: 24px;
+  background:
+    linear-gradient(90deg, transparent 0 2%, rgba(16, 35, 61, 0.16) 2% 3%, transparent 3% 5%),
+    linear-gradient(90deg, var(--ink) 0 10%, var(--jade) 10% 17%, var(--river) 17% 23%, var(--amber) 23% 31%, var(--vermilion) 31% 40%, var(--ink) 40% 100%);
+}
+
+.skyLayer,
+.mountainsLayer,
+.midArchitecture,
+.riverLayer,
+.floatingObjects,
+.greeneryLayer,
+.lanternZone {
+  position: absolute;
+  inset: 0;
+}
+
+.skyScene {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 34%;
+}
+
+.cloudBand,
+.cloudBandSecondary {
+  position: absolute;
+  top: 10%;
+  left: 6%;
+  width: 28%;
+  height: 13%;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, rgba(240, 177, 70, 0.85), rgba(243, 215, 106, 0.8));
+  opacity: 0.28;
+}
+
+.cloudBand::before,
+.cloudBand::after,
+.cloudBandSecondary::before,
+.cloudBandSecondary::after {
+  content: '';
+  position: absolute;
+  border-radius: 999px;
+  background: inherit;
+}
+
+.cloudBand::before,
+.cloudBandSecondary::before {
+  inset: -36% 18% auto auto;
+  width: 34%;
+  height: 100%;
+}
+
+.cloudBand::after,
+.cloudBandSecondary::after {
+  inset: auto auto -28% 14%;
+  width: 40%;
+  height: 92%;
+}
+
+.cloudBandSecondary {
+  top: 28%;
+  left: auto;
+  right: 5%;
+  width: 24%;
+  opacity: 0.22;
+}
+
+.sunHalo {
+  position: absolute;
+  top: 7.5%;
+  left: 8%;
+  width: clamp(84px, 10vw, 138px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle, rgba(240, 177, 70, 0.2) 0 26%, transparent 27% 44%, rgba(240, 177, 70, 0.18) 45% 52%, transparent 53% 66%, rgba(240, 177, 70, 0.16) 67% 74%, transparent 75%);
+}
+
+.sunCore {
+  width: 32%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--vermilion);
+  box-shadow: 0 0 0 10px rgba(240, 177, 70, 0.34);
+}
+
+.dotCloudLeft,
+.dotCloudRight {
+  position: absolute;
+  width: 22%;
+  height: 10%;
+  background:
+    radial-gradient(circle, rgba(240, 177, 70, 0.62) 1px, transparent 1px);
+  background-size: 6px 6px;
+  mask: radial-gradient(circle at 20% 60%, black 0 34%, transparent 35%),
+    radial-gradient(circle at 46% 38%, black 0 40%, transparent 41%),
+    radial-gradient(circle at 72% 58%, black 0 36%, transparent 37%),
+    linear-gradient(black, black);
+  opacity: 0.7;
+}
+
+.dotCloudLeft {
+  top: 16%;
+  left: 46%;
+}
+
+.dotCloudRight {
+  top: 24%;
+  right: 22%;
+}
+
+.bannerLeft,
+.bannerRight {
+  position: absolute;
+  height: 4%;
+  border-radius: 999px;
+  background: rgba(240, 177, 70, 0.42);
+}
+
+.bannerLeft {
+  top: 14%;
+  right: 12%;
+  width: 14%;
+}
+
+.bannerRight {
+  top: 6%;
+  right: 2%;
+  width: 10%;
+}
+
+.birdCluster {
+  position: absolute;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.birdCluster span {
+  width: 1.35rem;
+  height: 0.78rem;
+  border-radius: 999px 999px 0 0;
+  border-top: 0.18rem solid var(--amber);
+  transform: rotate(14deg);
+}
+
+.birdCluster span:nth-child(2) {
+  transform: rotate(-12deg);
+}
+
+.birdCluster span:nth-child(3) {
+  width: 1.1rem;
+  transform: rotate(10deg);
+}
+
+.birdGroupA {
+  top: 10%;
+  right: 18%;
+}
+
+.birdGroupB {
+  top: 18%;
+  left: 22%;
+}
+
+.birdGroupC {
+  top: 11%;
+  left: 55%;
+}
+
+.mountains {
+  position: absolute;
+  inset: 12% 0 auto;
+  height: 32%;
+}
+
+.ridgeBack,
+.ridgeMid,
+.ridgeFront {
+  position: absolute;
+  inset: auto;
+  clip-path: polygon(0% 70%, 8% 44%, 18% 50%, 28% 28%, 40% 38%, 54% 22%, 66% 44%, 80% 24%, 100% 46%, 100% 100%, 0% 100%);
+}
+
+.ridgeBack {
+  left: -6%;
+  right: 36%;
+  top: 6%;
+  bottom: 28%;
+  background: linear-gradient(180deg, #2b8a81 0%, #266d68 100%);
+}
+
+.ridgeMid {
+  left: 10%;
+  right: 12%;
+  top: 12%;
+  bottom: 18%;
+  background: linear-gradient(180deg, #b33838 0%, #862e32 100%);
+}
+
+.ridgeFront {
+  left: 48%;
+  right: -10%;
+  top: 8%;
+  bottom: 12%;
+  background: linear-gradient(180deg, #2f8f88 0%, #1d5662 100%);
+}
+
+.ridgeCompact {
+  right: 8%;
+}
+
+.templeLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 52%;
+  height: 4%;
+  background:
+    linear-gradient(90deg, transparent 0 5%, rgba(255, 246, 235, 0.7) 5% 8%, transparent 8% 100%),
+    linear-gradient(90deg, #5fa2d9 0 32%, #83bed8 32% 68%, #245f9d 68% 100%);
+  opacity: 0.92;
+}
+
+.horizonGlow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 46%;
+  height: 18%;
+  background: linear-gradient(180deg, rgba(255, 246, 235, 0.42), rgba(255, 246, 235, 0));
+}
+
+.midArchitecture {
+  z-index: 2;
+}
+
+.templeBlock {
+  position: absolute;
+  width: 14.5%;
+  aspect-ratio: 0.74;
+  filter: drop-shadow(0 10px 12px rgba(16, 35, 61, 0.14));
+}
+
+.templeWarm {
+  --temple-main: #f0b146;
+  --temple-second: #d94a2c;
+  --temple-third: #fff1de;
+  --temple-ink: #11233c;
+}
+
+.templeCool {
+  --temple-main: #8ecbe4;
+  --temple-second: #5fa2d9;
+  --temple-third: #e4f7ff;
+  --temple-ink: #245f9d;
+}
+
+.templeMD {
+  width: 12%;
+}
+
+.templeLG {
+  width: 15%;
+}
+
+.templeXL {
+  width: 18%;
+}
+
+.templeLeft {
+  left: 9%;
+  top: 33%;
+}
+
+.templeCenter {
+  left: 40%;
+  top: 22%;
+}
+
+.templeRight {
+  right: 11%;
+  top: 35%;
+}
+
+.templeRoof,
+.templeRoofInner,
+.templeBody,
+.templeSteps,
+.templeDoor,
+.templePillarLeft,
+.templePillarRight {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.templeRoof {
+  top: 0;
+  width: 42%;
+  height: 38%;
+  clip-path: polygon(50% 0%, 70% 18%, 70% 100%, 30% 100%, 30% 18%);
+  background: linear-gradient(180deg, var(--temple-third) 0%, var(--temple-second) 84%);
+}
+
+.templeRoofInner {
+  top: 12%;
+  width: 30%;
+  height: 16%;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 90%);
+  clip-path: polygon(50% 0%, 74% 100%, 26% 100%);
+}
+
+.templeBody {
+  top: 30%;
+  width: 74%;
+  height: 44%;
+  border-radius: 14px 14px 10px 10px;
+  background:
+    linear-gradient(180deg, var(--temple-main) 0%, color-mix(in srgb, var(--temple-main) 70%, white) 72%, var(--temple-second) 72% 82%, var(--temple-main) 82% 100%);
+}
+
+.templeSteps {
+  bottom: 12%;
+  width: 80%;
+  height: 11%;
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, var(--temple-third) 0 45%, var(--temple-second) 45% 52%, var(--temple-third) 52% 100%);
+}
+
+.templeDoor {
+  bottom: 18%;
+  width: 16%;
+  height: 19%;
+  border-radius: 22px 22px 4px 4px;
+  background: var(--temple-ink);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--temple-third) 84%, transparent);
+}
+
+.templePillarLeft,
+.templePillarRight {
+  top: 38%;
+  width: 8%;
+  height: 30%;
+  background: var(--temple-third);
+  box-shadow: inset 0 -8px 0 color-mix(in srgb, var(--temple-second) 66%, white);
+}
+
+.templePillarLeft {
+  left: 35%;
+}
+
+.templePillarRight {
+  left: 65%;
+}
+
+.monumentBlock {
+  position: absolute;
+  width: 10%;
+  aspect-ratio: 0.42;
+}
+
+.monumentBase,
+.monumentCore,
+.monumentTop,
+.monumentAccent {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.monumentBase {
+  bottom: 0;
+  width: 84%;
+  height: 14%;
+  border-radius: 12px 12px 4px 4px;
+  background: #fff0db;
+}
+
+.monumentCore {
+  bottom: 10%;
+  width: 58%;
+  height: 48%;
+  border-radius: 12px 12px 8px 8px;
+  background: linear-gradient(180deg, #ffe7c9 0%, #f0b146 64%, #d78c26 100%);
+}
+
+.monumentTop {
+  bottom: 48%;
+  width: 42%;
+  height: 36%;
+  clip-path: polygon(50% 0%, 74% 18%, 86% 100%, 14% 100%, 26% 18%);
+  background: linear-gradient(180deg, #f9f1e6 0%, #f0b146 100%);
+}
+
+.monumentAccent {
+  bottom: 24%;
+  width: 12%;
+  height: 30%;
+  border-radius: 999px;
+  background: var(--vermilion);
+}
+
+.monumentSpire {
+  left: 4%;
+  bottom: 16%;
+}
+
+.monumentStupa {
+  right: 18%;
+  bottom: 22%;
+}
+
+.monumentGate {
+  left: 50%;
+  bottom: 12%;
+  width: 16%;
+  aspect-ratio: 1.1;
+  transform: translateX(-50%);
+}
+
+.monumentGate .monumentCore {
+  width: 80%;
+  height: 52%;
+  border-radius: 0;
+  background:
+    linear-gradient(90deg, #f9c85b 0 12%, transparent 12% 22%, #f9c85b 22% 34%, transparent 34% 66%, #f9c85b 66% 78%, transparent 78% 88%, #f9c85b 88% 100%),
+    linear-gradient(180deg, #133866 0 36%, #b33738 36% 100%);
+}
+
+.monumentGate .monumentTop {
+  width: 88%;
+  height: 26%;
+  clip-path: polygon(50% 0%, 100% 100%, 0 100%);
+  background: linear-gradient(180deg, #f9f1e6 0%, #d94a2c 100%);
+}
+
+.monumentGate .monumentBase {
+  width: 92%;
+}
+
+.riverScene {
+  position: absolute;
+  inset: 58% 0 8%;
+}
+
+.riverTop,
+.riverMid {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: 50px 50px 0 0;
+}
+
+.riverTop {
+  top: 0;
+  height: 38%;
+  background:
+    linear-gradient(180deg, rgba(255, 246, 235, 0.18), rgba(255, 246, 235, 0)),
+    linear-gradient(180deg, #5fa2d9 0%, #3c78b4 100%);
+}
+
+.riverMid {
+  top: 28%;
+  bottom: 0;
+  background:
+    linear-gradient(180deg, #245f9d 0%, #204f83 100%);
+}
+
+.riverPattern {
+  position: absolute;
+  inset: 14% 0 4%;
+  background:
+    linear-gradient(90deg, transparent 0 4%, rgba(255, 246, 235, 0.55) 4% 5%, transparent 5% 11%, rgba(255, 246, 235, 0.22) 11% 12%, transparent 12% 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  background-size: 180px 100%, auto;
+  opacity: 0.9;
+}
+
+.riverShine {
+  position: absolute;
+  inset: 22% 8% auto;
+  height: 12%;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, rgba(255, 246, 235, 0) 0%, rgba(255, 246, 235, 0.34) 50%, rgba(255, 246, 235, 0) 100%);
+  opacity: 0.8;
+}
+
+.lotusLine {
+  position: absolute;
+  inset: auto 8% 8%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.lotusLine span {
+  width: clamp(54px, 8vw, 88px);
+  aspect-ratio: 1.1;
+  background:
+    radial-gradient(circle at 50% 72%, rgba(43, 138, 129, 0.95) 0 26%, transparent 27%),
+    radial-gradient(circle at 20% 58%, rgba(217, 74, 44, 0.95) 0 16%, transparent 17%),
+    radial-gradient(circle at 50% 36%, rgba(217, 74, 44, 0.95) 0 20%, transparent 21%),
+    radial-gradient(circle at 80% 58%, rgba(217, 74, 44, 0.95) 0 16%, transparent 17%);
+}
+
+.floatingObjects {
+  z-index: 4;
+}
+
+.object {
+  position: absolute;
+}
+
+.objectShape,
+.objectAccent,
+.objectDetail {
+  position: absolute;
+}
+
+.objectSun {
+  top: 5.5%;
+  right: 11%;
+  width: 12%;
+  aspect-ratio: 1;
+}
+
+.objectSun .objectShape {
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, var(--vermilion) 0 28%, transparent 29% 44%, rgba(240, 177, 70, 0.6) 45% 58%, transparent 59%),
+    radial-gradient(circle, rgba(240, 177, 70, 0.18), transparent 70%);
+}
+
+.objectSun .objectAccent {
+  inset: 16%;
+  border-radius: 50%;
+  border: 2px dotted rgba(255, 246, 235, 0.45);
+}
+
+.objectSun .objectDetail {
+  inset: 50% 46% auto;
+  width: 8%;
+  height: 18%;
+  background: transparent;
+}
+
+.objectBoat {
+  top: 21%;
+  left: 3.5%;
+  width: 20%;
+  aspect-ratio: 1.8;
+}
+
+.objectBoat .objectShape {
+  inset: auto 8% 10% 8%;
+  height: 26%;
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 10% 100%);
+  background: linear-gradient(180deg, #f0b146 0 40%, #d94a2c 40% 52%, #0f4c81 52% 100%);
+}
+
+.objectBoat .objectAccent {
+  inset: 18% 26% 38%;
+  border-radius: 4px;
+  background:
+    linear-gradient(90deg, #fff6eb 0 10%, transparent 10% 22%, #fff6eb 22% 32%, transparent 32% 44%, #fff6eb 44% 56%, transparent 56% 68%, #fff6eb 68% 78%, transparent 78% 90%, #fff6eb 90% 100%),
+    linear-gradient(180deg, #f3d76a 0 24%, #0f4c81 24% 100%);
+}
+
+.objectBoat .objectDetail {
+  left: 72%;
+  top: 22%;
+  width: 8%;
+  height: 52%;
+  background: #d94a2c;
+  transform: skew(-18deg);
+}
+
+.objectPlate {
+  top: 31%;
+  left: 38%;
+  width: 13%;
+  aspect-ratio: 1;
+}
+
+.objectPlate .objectShape {
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, #245f9d 0 54%, transparent 55%),
+    radial-gradient(circle at 50% 50%, #f0b146 0 72%, transparent 73%);
+}
+
+.objectPlate .objectAccent {
+  inset: 22%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 40%, #d94a2c 0 16%, transparent 17%),
+    radial-gradient(circle at 74% 36%, #f0b146 0 14%, transparent 15%),
+    radial-gradient(circle at 64% 64%, #fff6eb 0 11%, transparent 12%);
+}
+
+.objectPlate .objectDetail {
+  inset: 36% 14%;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 72%, #fff6eb 73% 76%, transparent 77%),
+    linear-gradient(135deg, transparent 0 42%, #d94a2c 42% 58%, transparent 58%);
+}
+
+.objectKite {
+  top: 28%;
+  right: 28%;
+  width: 12%;
+  aspect-ratio: 0.9;
+}
+
+.objectKite .objectShape {
+  inset: 8% 14% 20%;
+  clip-path: polygon(50% 0%, 100% 42%, 50% 100%, 0% 42%);
+  background:
+    linear-gradient(135deg, #fff6eb 0 46%, #5fa2d9 46% 52%, #f0b146 52% 100%);
+}
+
+.objectKite .objectAccent {
+  inset: 28% 46% auto;
+  width: 8%;
+  height: 58%;
+  background: var(--ink);
+}
+
+.objectKite .objectDetail {
+  inset: auto 44% 0;
+  width: 12%;
+  height: 22%;
+  background:
+    linear-gradient(180deg, #d94a2c 0 50%, #f0b146 50% 100%);
+}
+
+.objectMask {
+  top: 58%;
+  right: 4%;
+  width: 10%;
+  aspect-ratio: 0.64;
+}
+
+.objectMask .objectShape {
+  inset: 0;
+  border-radius: 18px 18px 28px 28px;
+  background:
+    linear-gradient(180deg, #2f8f88 0 28%, #f0b146 28% 38%, #d94a2c 38% 100%);
+}
+
+.objectMask .objectAccent {
+  inset: 18% 22% auto;
+  height: 22%;
+  background:
+    radial-gradient(circle at 24% 50%, #10233d 0 12%, transparent 13%),
+    radial-gradient(circle at 76% 50%, #10233d 0 12%, transparent 13%),
+    linear-gradient(90deg, transparent 0 38%, #fff6eb 38% 62%, transparent 62% 100%);
+}
+
+.objectMask .objectDetail {
+  inset: auto 26% 14%;
+  height: 18%;
+  border-radius: 0 0 999px 999px;
+  background: #fff6eb;
+}
+
+.objectFigure {
+  top: 42%;
+  left: 50%;
+  width: 9%;
+  aspect-ratio: 0.48;
+}
+
+.objectFigure .objectShape {
+  inset: 18% 28% 0;
+  border-radius: 30px 30px 8px 8px;
+  background:
+    linear-gradient(180deg, #fff0df 0 30%, #d94a2c 30% 48%, #5fa2d9 48% 100%);
+}
+
+.objectFigure .objectAccent {
+  top: 0;
+  left: 50%;
+  width: 28%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #fff0df;
+  box-shadow: 0 0 0 6px #10233d;
+}
+
+.objectFigure .objectDetail {
+  inset: 34% 4% auto;
+  height: 10%;
+  background:
+    linear-gradient(90deg, transparent 0 18%, #fff0df 18% 36%, transparent 36% 64%, #fff0df 64% 82%, transparent 82%);
+}
+
+.objectElephant {
+  top: 27%;
+  right: 9%;
+  width: 18%;
+  aspect-ratio: 1.35;
+}
+
+.objectElephant .objectShape {
+  inset: 12% 12% 12% 6%;
+  border-radius: 24px;
+  background:
+    linear-gradient(90deg, #5f87d7 0 74%, #10233d 74% 100%);
+}
+
+.objectElephant .objectAccent {
+  inset: 12% 28% 32% 24%;
+  border: 10px solid #fff0df;
+  border-bottom-width: 20px;
+  background: transparent;
+}
+
+.objectElephant .objectDetail {
+  inset: 16% auto 0 78%;
+  width: 12%;
+  height: 52%;
+  border-radius: 0 0 20px 20px;
+  background: #10233d;
+}
+
+.greeneryLayer {
+  z-index: 5;
+}
+
+.tree {
+  position: absolute;
+}
+
+.treeTrunk,
+.treeCanopy,
+.treeCanopyAlt,
+.treeCanopyThird {
+  position: absolute;
+}
+
+.treeTrunk {
+  left: 50%;
+  bottom: 0;
+  width: 10%;
+  height: 34%;
+  transform: translateX(-50%);
+  background: #10233d;
+}
+
+.treeRound .treeCanopy {
+  inset: 0 8% 28%;
+  border-radius: 50% 50% 42% 42%;
+  background: #5fa2d9;
+}
+
+.treeRound .treeCanopyAlt {
+  inset: 18% 22% 18% 18%;
+  border-radius: 46% 54% 52% 48%;
+  background:
+    radial-gradient(circle at 30% 42%, #fff0df 0 8%, transparent 9%),
+    radial-gradient(circle at 60% 56%, #fff0df 0 8%, transparent 9%),
+    #2f8f88;
+}
+
+.treeRound .treeCanopyThird {
+  inset: auto 28% 18%;
+  height: 20%;
+  border-radius: 999px;
+  background: rgba(16, 35, 61, 0.24);
+}
+
+.treeTall .treeCanopy,
+.treeTall .treeCanopyAlt,
+.treeTall .treeCanopyThird {
+  inset: 0 auto 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 58%;
+  border-radius: 28px 28px 14px 14px;
+  clip-path: polygon(50% 0%, 100% 100%, 0 100%);
+}
+
+.treeTall .treeCanopy {
+  height: 58%;
+  background: #214e4e;
+}
+
+.treeTall .treeCanopyAlt {
+  top: 22%;
+  height: 42%;
+  background: #2f8f88;
+}
+
+.treeTall .treeCanopyThird {
+  top: 44%;
+  height: 26%;
+  background: #0f4c81;
+}
+
+.treePalm .treeCanopy,
+.treePalm .treeCanopyAlt,
+.treePalm .treeCanopyThird {
+  left: 50%;
+  top: 12%;
+  width: 70%;
+  height: 18%;
+  border-radius: 999px;
+  background: #2f8f88;
+}
+
+.treePalm .treeCanopy {
+  transform: translateX(-50%) rotate(-28deg);
+}
+
+.treePalm .treeCanopyAlt {
+  transform: translateX(-50%) rotate(24deg);
+  background: #214e4e;
+}
+
+.treePalm .treeCanopyThird {
+  transform: translateX(-50%) rotate(0deg);
+  top: 22%;
+  background: #5fa2d9;
+}
+
+.treePalmLeft {
+  left: 2%;
+  bottom: 22%;
+  width: 16%;
+  aspect-ratio: 0.85;
+}
+
+.treePalmRight {
+  right: 4%;
+  bottom: 37%;
+  width: 12%;
+  aspect-ratio: 0.85;
+}
+
+.treeTallLeft {
+  left: 17%;
+  bottom: 26%;
+  width: 7%;
+  aspect-ratio: 0.56;
+}
+
+.treeTallRight {
+  right: 22%;
+  bottom: 34%;
+  width: 7%;
+  aspect-ratio: 0.56;
+}
+
+.treeRoundCenter {
+  left: 30%;
+  bottom: 33%;
+  width: 16%;
+  aspect-ratio: 0.9;
+}
+
+.treeRoundLow {
+  left: 66%;
+  bottom: 8%;
+  width: 12%;
+  aspect-ratio: 0.9;
+}
+
+.lanternZone {
+  z-index: 6;
+}
+
+.lanternGroup {
+  position: absolute;
+  inset: 30% 2% auto auto;
+  width: 28%;
+  height: 44%;
+}
+
+.lantern {
+  position: absolute;
+}
+
+.lanternString {
+  position: absolute;
+  left: 50%;
+  top: -34px;
+  width: 2px;
+  height: 36px;
+  transform: translateX(-50%);
+  background: rgba(16, 35, 61, 0.26);
+}
+
+.lanternBody {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px 18px 22px 22px;
+  background:
+    linear-gradient(180deg, #ff682a 0 12%, #d94a2c 12% 100%);
+  box-shadow: inset 0 0 0 3px rgba(255, 214, 166, 0.18);
+}
+
+.lanternBody::before {
+  content: '';
+  position: absolute;
+  inset: 16% 16% 26%;
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, rgba(255, 246, 235, 0.12), rgba(255, 246, 235, 0)),
+    repeating-linear-gradient(90deg, rgba(16, 35, 61, 0.14) 0 2px, transparent 2px 8px);
+}
+
+.lanternBody::after {
+  content: '';
+  position: absolute;
+  inset: auto 20% 8%;
+  height: 16%;
+  border-radius: 999px;
+  background: #fff0df;
+}
+
+.lanternGlow {
+  position: absolute;
+  inset: auto 34% 12%;
+  width: 32%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(240, 177, 70, 0.95) 0 40%, rgba(240, 177, 70, 0.14) 60%, transparent 68%);
+}
+
+.lanternA {
+  top: 16%;
+  right: 18%;
+  width: 16%;
+  aspect-ratio: 0.72;
+}
+
+.lanternB {
+  top: 30%;
+  right: 58%;
+  width: 13%;
+  aspect-ratio: 0.72;
+}
+
+.lanternC {
+  top: 36%;
+  right: 0;
+  width: 12%;
+  aspect-ratio: 0.72;
+}
+
+.lanternD {
+  top: 58%;
+  right: 28%;
+  width: 14%;
+  aspect-ratio: 0.72;
+}
+
+.lanternE {
+  top: 62%;
+  right: 74%;
+  width: 11%;
+  aspect-ratio: 0.72;
+}
+
+@media (max-width: 1080px) {
+  .mural {
+    min-height: 920px;
+  }
+
+  .objectElephant {
+    right: 5%;
+    width: 20%;
+  }
+
+  .lanternGroup {
+    width: 34%;
+  }
+}
+
+@media (max-width: 820px) {
+  .mural {
+    min-height: 780px;
+    --panel-radius: 30px;
+  }
+
+  .compact {
+    min-height: 520px;
+  }
+
+  .sunHalo {
+    left: 6%;
+  }
+
+  .templeLeft {
+    left: 4%;
+  }
+
+  .templeCenter {
+    left: 37%;
+  }
+
+  .templeRight {
+    right: 4%;
+  }
+
+  .treePalmLeft,
+  .treePalmRight {
+    opacity: 0.88;
+  }
+}
+
+@media (max-width: 680px) {
+  .mural {
+    min-height: 680px;
+    --panel-radius: 26px;
+  }
+
+  .compact {
+    min-height: 460px;
+  }
+
+  .frameBorder {
+    inset: 10px;
+    border-radius: 18px;
+  }
+
+  .skyScene {
+    height: 30%;
+  }
+
+  .mountains {
+    top: 10%;
+  }
+
+  .templeMD {
+    width: 15%;
+  }
+
+  .templeLG {
+    width: 18%;
+  }
+
+  .templeXL {
+    width: 21%;
+  }
+
+  .objectBoat {
+    width: 24%;
+  }
+
+  .objectElephant {
+    width: 22%;
+  }
+
+  .lanternGroup {
+    width: 40%;
+    right: -4%;
+  }
+
+  .birdCluster {
+    gap: 0.4rem;
+  }
+
+  .birdCluster span {
+    width: 1rem;
+    height: 0.55rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .mural {
+    min-height: 620px;
+  }
+
+  .compact {
+    min-height: 420px;
+  }
+
+  .dotCloudLeft,
+  .dotCloudRight,
+  .bannerLeft,
+  .bannerRight,
+  .monumentSpire,
+  .monumentStupa {
+    opacity: 0.68;
+  }
+
+  .lanternGroup {
+    width: 46%;
+  }
+
+  .treePalmLeft,
+  .treePalmRight,
+  .objectMask {
+    display: none;
+  }
+}

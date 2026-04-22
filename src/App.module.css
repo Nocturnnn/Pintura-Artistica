@@ -1,0 +1,28 @@
+.appShell {
+  position: relative;
+  overflow-x: clip;
+}
+
+.frameTop {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 12px;
+  z-index: 20;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--vermilion) 0 24%, var(--amber) 24% 52%, var(--sky) 52% 74%, var(--ink) 74% 100%);
+  box-shadow: 0 4px 18px rgba(16, 35, 61, 0.18);
+}
+
+.main {
+  position: relative;
+  display: grid;
+  gap: 5rem;
+  padding: 0 0 4rem;
+}
+
+@media (max-width: 680px) {
+  .main {
+    gap: 3.5rem;
+  }
+}
