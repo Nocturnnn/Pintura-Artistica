@@ -1,11 +1,13 @@
+import type { CSSProperties } from 'react';
 import styles from './SceneMural.module.css';
 
 type DecorativeTreeProps = {
   className?: string;
+  style?: CSSProperties;
   kind: 'palm' | 'round' | 'tall';
 };
 
-export function DecorativeTree({ className = '', kind }: DecorativeTreeProps) {
+export function DecorativeTree({ className = '', style, kind }: DecorativeTreeProps) {
   return (
     <div
       className={[
@@ -15,6 +17,7 @@ export function DecorativeTree({ className = '', kind }: DecorativeTreeProps) {
       ]
         .filter(Boolean)
         .join(' ')}
+      style={style}
       aria-hidden="true"
     >
       <span className={styles.treeTrunk} />

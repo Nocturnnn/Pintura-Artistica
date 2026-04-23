@@ -1,12 +1,14 @@
+import type { CSSProperties } from 'react';
 import styles from './SceneMural.module.css';
 
 type TempleBlockProps = {
   className?: string;
+  style?: CSSProperties;
   tone: 'warm' | 'cool';
   size: 'md' | 'lg' | 'xl';
 };
 
-export function TempleBlock({ className = '', tone, size }: TempleBlockProps) {
+export function TempleBlock({ className = '', style, tone, size }: TempleBlockProps) {
   return (
     <div
       className={[
@@ -17,6 +19,7 @@ export function TempleBlock({ className = '', tone, size }: TempleBlockProps) {
       ]
         .filter(Boolean)
         .join(' ')}
+      style={style}
       aria-hidden="true"
     >
       <span className={styles.templeRoof} />

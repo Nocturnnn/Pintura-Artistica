@@ -1,8 +1,11 @@
+import type { CSSProperties } from 'react';
 import { motion } from 'framer-motion';
 import styles from './SceneMural.module.css';
 
 type LanternGroupProps = {
+  className?: string;
   compact?: boolean;
+  style?: CSSProperties;
 };
 
 const lanterns = [
@@ -13,9 +16,13 @@ const lanterns = [
   { id: 'e', className: styles.lanternE, delay: 1.2 },
 ];
 
-export function LanternGroup({ compact = false }: LanternGroupProps) {
+export function LanternGroup({ className = '', compact = false, style }: LanternGroupProps) {
   return (
-    <div className={styles.lanternGroup} aria-hidden="true">
+    <div
+      className={[styles.lanternGroup, className].filter(Boolean).join(' ')}
+      style={style}
+      aria-hidden="true"
+    >
       {lanterns.map((lantern) => (
         <motion.div
           key={lantern.id}

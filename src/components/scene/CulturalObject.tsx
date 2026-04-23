@@ -1,12 +1,14 @@
+import type { CSSProperties } from 'react';
 import { motion } from 'framer-motion';
 import styles from './SceneMural.module.css';
 
 type CulturalObjectProps = {
   className?: string;
+  style?: CSSProperties;
   kind: 'sun' | 'boat' | 'plate' | 'kite' | 'mask' | 'figure' | 'elephant';
 };
 
-export function CulturalObject({ className = '', kind }: CulturalObjectProps) {
+export function CulturalObject({ className = '', style, kind }: CulturalObjectProps) {
   const animation =
     kind === 'boat'
       ? { y: [0, -6, 0], rotate: [0, -1.6, 0, 1.6, 0] }
@@ -25,6 +27,7 @@ export function CulturalObject({ className = '', kind }: CulturalObjectProps) {
       ]
         .filter(Boolean)
         .join(' ')}
+      style={style}
       animate={animation}
       transition={{
         duration: kind === 'boat' ? 6.8 : 5.5,

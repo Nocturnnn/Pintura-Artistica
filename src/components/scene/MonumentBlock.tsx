@@ -1,11 +1,13 @@
+import type { CSSProperties } from 'react';
 import styles from './SceneMural.module.css';
 
 type MonumentBlockProps = {
   className?: string;
+  style?: CSSProperties;
   kind: 'spire' | 'stupa' | 'gate';
 };
 
-export function MonumentBlock({ className = '', kind }: MonumentBlockProps) {
+export function MonumentBlock({ className = '', style, kind }: MonumentBlockProps) {
   return (
     <div
       className={[
@@ -15,6 +17,7 @@ export function MonumentBlock({ className = '', kind }: MonumentBlockProps) {
       ]
         .filter(Boolean)
         .join(' ')}
+      style={style}
       aria-hidden="true"
     >
       <span className={styles.monumentBase} />

@@ -1,6 +1,7 @@
 import styles from './App.module.css';
 import { highlights, interactiveDetails } from './data/siteData';
 import { FooterArt } from './components/sections/FooterArt';
+import { GrandPaintingSection } from './components/sections/GrandPaintingSection';
 import { HeroSection } from './components/sections/HeroSection';
 import { HighlightCards } from './components/sections/HighlightCards';
 import { InteractiveDetails } from './components/sections/InteractiveDetails';
@@ -16,6 +17,7 @@ function App() {
         <StorySection />
         <InteractiveDetails items={interactiveDetails} />
       </main>
+      <GrandPaintingSection />
       <FooterArt />
     </div>
   );
