@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Pintura Artistica</title>
+  <desc id="desc">Favicon com sol, templo e rio inspirado na identidade visual do site.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7e2cc" />
+      <stop offset="100%" stop-color="#f0d1a0" />
+    </linearGradient>
+    <linearGradient id="spire" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d8f0f6" />
+      <stop offset="100%" stop-color="#5fa2d9" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#bg)" />
+  <circle cx="18" cy="17" r="8.5" fill="#f0b146" opacity="0.35" />
+  <circle cx="18" cy="17" r="4.2" fill="#d94a2c" />
+  <path d="M10 30C18 24 24 28 31 24C35 22 40 22 46 26L46 34L10 34Z" fill="#a93632" />
+  <path d="M27 11L33 11L35 22L25 22Z" fill="url(#spire)" />
+  <rect x="23" y="22" width="14" height="18" rx="3" fill="#8ecbe4" />
+  <path d="M20 24H40L38 28H22Z" fill="#fff6eb" />
+  <rect x="28.5" y="27" width="3" height="9" rx="1.5" fill="#245f9d" />
+  <rect x="19" y="40" width="22" height="4" rx="2" fill="#fff6eb" />
+  <path d="M0 44H64V64H0Z" fill="#245f9d" />
+  <path d="M0 48C7 45 13 51 20 48C26 45 32 51 39 48C46 45 52 51 64 47V64H0Z" fill="#5fa2d9" />
+  <circle cx="17" cy="54" r="2.3" fill="#d94a2c" />
+  <circle cx="17" cy="54" r="4" fill="none" stroke="#2f8f88" stroke-width="1.4" />
+  <circle cx="47" cy="52" r="1.8" fill="#fff6eb" opacity="0.8" />
+</svg>
